@@ -1,0 +1,167 @@
+
+**** 06/20/25 17:26:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulaçao LEDs"  [ C:\cds_spb_home\cdssetup\projects\Circuito LEDs\circuito leds-pspicefiles\schematic1\simu
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "Simulaçao LEDs.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 2ms 0 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CIRCUITO LEDS
+.EXTERNAL OUTPUT Vdd
+.EXTERNAL OUTPUT Vee
+.EXTERNAL OUTPUT Vcc
+R_R1         N000361 N03406  1800 TC=0,0 
+R_R2         VEE N03406  3570 TC=0,0 
+R_Rf         N03406 N03433  1900 TC=0,0 
+R_RB         N03433 N03781  21300 TC=0,0 
+R_RE         N03675 N03816  112 TC=0,0 
+R_RC         N03671 VDD  360 TC=0,0 
+V_V1         VCC 0 5Vdc
+V_V3         VEE 0 -15Vdc
+V_V2         VDD 0 15Vdc
+X_U1         0 N03406 VDD VEE N03433 TL082
+Q_Q1         N03671 N03781 N03675 BC547C 
+X_D1         0 N03675 Zener_parameterized PARAMS: VZT=5 RSF=100m
+X_D2         0 N03816 Zener_parameterized PARAMS: VZT=1.92 RSF=100m
+V_V5         N000361 0  
++SIN 2.5 2.5 1k 0 0 0
+.PARAM  t=5
+
+**** RESUMING "Simulaçao LEDs.cir" ****
+.END
+
+**** 06/20/25 17:26:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulaçao LEDs"  [ C:\cds_spb_home\cdssetup\projects\Circuito LEDs\circuito leds-pspicefiles\schematic1\simu
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.DX         
+          IS  800.000000E-18 
+
+
+**** 06/20/25 17:26:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulaçao LEDs"  [ C:\cds_spb_home\cdssetup\projects\Circuito LEDs\circuito leds-pspicefiles\schematic1\simu
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.JX         
+               PJF             
+         VTO   -1            
+        BETA  270.100000E-06 
+          IS   15.000000E-12 
+
+
+**** 06/20/25 17:26:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulaçao LEDs"  [ C:\cds_spb_home\cdssetup\projects\Circuito LEDs\circuito leds-pspicefiles\schematic1\simu
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)    5.0000  (  VDD)   15.0000  (  VEE)  -15.0000  (N03406)-16.06E-06     
+
+(N03433)    5.3443 (N03671)    8.6965 (N03675)    3.8728 (N03781)    4.6112     
+
+(N03816)    1.9193 (X_D1.1)    -.6319 (X_D1.3)    4.5047 (X_D1.9)-1.742E-15     
+
+(X_D2.1)     .4946 (X_D2.3)    1.4247 (X_D2.9) 47.70E-06 (X_U1.6)-878.1E-06     
+
+(X_U1.7)    5.7713 (X_U1.8)    5.7713 (X_U1.9)    0.0000 (N000361)    2.5000    
+
+(X_U1.10)    -.3986                   (X_U1.11)  -14.6550                       
+
+(X_U1.12)  -14.6550                   (X_U1.53)   12.8000                       
+
+(X_U1.54)  -12.8000                   (X_U1.90)    2.8472                       
+
+(X_U1.91)   25.0000                   (X_U1.92)  -25.0000                       
+
+(X_U1.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+    V_V3         1.840E-02
+    V_V2        -3.170E-02
+    V_V5        -1.389E-03
+    X_U1.VB     -8.781E-09
+    X_U1.VC      7.457E-12
+    X_U1.VE      1.815E-11
+    X_U1.VLIM    2.847E-03
+    X_U1.VLP    -2.215E-11
+    X_U1.VLN    -2.785E-11
+
+    TOTAL POWER DISSIPATION   7.55E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 06/20/25 17:26:26 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-Simulaçao LEDs"  [ C:\cds_spb_home\cdssetup\projects\Circuito LEDs\circuito leds-pspicefiles\schematic1\simu
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =         .31
+

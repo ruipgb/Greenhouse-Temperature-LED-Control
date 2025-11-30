@@ -1,0 +1,160 @@
+
+**** 06/20/25 17:25:25 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulação comparador"  [ c:\cds_spb_home\cdssetup\projects\circuito comparador\circuito comparador-pspicefil
+
+
+ ****     CIRCUIT DESCRIPTION
+
+
+******************************************************************************
+
+
+
+
+** Creating circuit file "simulação comparador.cir" 
+** WARNING: THIS AUTOMATICALLY GENERATED FILE MAY BE OVERWRITTEN BY SUBSEQUENT SIMULATIONS
+
+*Libraries: 
+* Profile Libraries :
+* Local Libraries :
+* From [PSPICE NETLIST] section of C:\cds_spb_home\cdssetup\OrCAD_PSpiceTIPSpice_Install\23.1.0\PSpice.ini file:
+.lib "nom_pspti.lib" 
+.lib "nom.lib" 
+
+*Analysis directives: 
+.TRAN  0 2m 0 
+.OPTIONS ADVCONV
+.OPTIONS FILEMODELSEARCH
+.PROBE64 V(alias(*)) I(alias(*)) W(alias(*)) D(alias(*)) NOISE(alias(*)) 
+.INC "..\SCHEMATIC1.net" 
+
+
+
+**** INCLUDING SCHEMATIC1.net ****
+* source CIRCUITO COMPARADOR
+.EXTERNAL OUTPUT Vee
+.EXTERNAL OUTPUT Vcc
+.EXTERNAL OUTPUT Vdd
+V_V1         VCC 0 5Vdc
+V_V3         VEE 0 -15Vdc
+V_V2         VDD 0 15Vdc
+R_R1         N03954 N03574  820 TC=0,0 
+R_Rf         N03574 N03596  270k TC=0,0 
+R_R2         N03574 N03588  10k TC=0,0 
+R_R3         N035231 N03592  10k TC=0,0 
+X_U1         N03588 N03592 VDD VEE N03596 TL082
+V_V4         N035231 0 2.5Vdc
+V_V5         N03954 0  
++PULSE 0 5 0 0.5m 0.5m 0 1m
+.PARAM  t=5
+
+**** RESUMING "simulação comparador.cir" ****
+.END
+
+**** 06/20/25 17:25:25 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulação comparador"  [ c:\cds_spb_home\cdssetup\projects\circuito comparador\circuito comparador-pspicefil
+
+
+ ****     Diode MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.DX         
+          IS  800.000000E-18 
+
+
+**** 06/20/25 17:25:25 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulação comparador"  [ c:\cds_spb_home\cdssetup\projects\circuito comparador\circuito comparador-pspicefil
+
+
+ ****     Junction FET MODEL PARAMETERS
+
+
+******************************************************************************
+
+
+
+
+               X_U1.JX         
+               PJF             
+         VTO   -1            
+        BETA  270.100000E-06 
+          IS   15.000000E-12 
+
+
+**** 06/20/25 17:25:25 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulação comparador"  [ c:\cds_spb_home\cdssetup\projects\circuito comparador\circuito comparador-pspicefil
+
+
+ ****     INITIAL TRANSIENT SOLUTION       TEMPERATURE =   27.000 DEG C
+
+
+******************************************************************************
+
+
+
+ NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE     NODE   VOLTAGE
+
+
+(  VCC)    5.0000  (  VDD)   15.0000  (  VEE)  -15.0000  (N03574)    -.0408     
+
+(N03588)    -.0408 (N03592)    2.5000 (N03596)  -13.4770 (N03954)    0.0000     
+
+(X_U1.6)   19.5180 (X_U1.7)  -13.5120 (X_U1.8)  -13.5120 (X_U1.9)    0.0000     
+
+(N035231)    2.5000                   (X_U1.10)    -.1907                       
+
+(X_U1.11)  -15.0000                   (X_U1.12)  -14.3100                       
+
+(X_U1.53)   12.8000                   (X_U1.54)  -12.8000                       
+
+(X_U1.90)    -.2338                   (X_U1.91)   25.0000                       
+
+(X_U1.92)  -25.0000                   (X_U1.99)    0.0000                   
+
+
+
+
+    VOLTAGE SOURCE CURRENTS
+    NAME         CURRENT
+
+    V_V1         0.000E+00
+    V_V3         1.401E-02
+    V_V2        -1.419E-02
+    V_V4        -5.019E-11
+    V_V5        -4.976E-05
+    X_U1.VB      1.952E-04
+    X_U1.VC      2.628E-11
+    X_U1.VE     -1.840E-04
+    X_U1.VLIM   -2.338E-04
+    X_U1.VLP    -2.523E-11
+    X_U1.VLN    -2.477E-11
+
+    TOTAL POWER DISSIPATION   4.23E-01  WATTS
+
+
+
+          JOB CONCLUDED
+
+**** 06/20/25 17:25:25 **** PSpice 23.1.0 (30 January 2024) *** ID# 0 ********
+
+ ** Profile: "SCHEMATIC1-simulação comparador"  [ c:\cds_spb_home\cdssetup\projects\circuito comparador\circuito comparador-pspicefil
+
+
+ ****     JOB STATISTICS SUMMARY
+
+
+******************************************************************************
+
+
+
+  Total job time (using Solver 1)   =        3.05
+
